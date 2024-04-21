@@ -1,0 +1,2 @@
+# Clips
+Some clips projects
