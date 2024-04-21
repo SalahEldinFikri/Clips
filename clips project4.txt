@@ -1,0 +1,18 @@
+(deffacts group 
+(Type Apple Fruits)
+(Type Carrot Vegetables)
+(Type Banana Fruits)
+(Type Broccoli Vegetables)
+(Type Strawberry Fruits)
+(Type Pepper Vegetables)
+(Type Orange Fruits)
+
+)
+
+
+(defrule r1
+(Type ?L ?S)
+(test (eq ?S Fruits))
+=>
+(printout t ?L " : "?S crlf)
+)

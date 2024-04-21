@@ -1,0 +1,40 @@
+(defrule mul
+
+=>
+(printout t "Enter first number" crlf)
+(bind ?n (read))
+(printout t "Enter sec number" crlf)
+(bind ?a (read))
+
+(printout t  "mul = " (* ?n ?a) crlf)
+) 
+(defrule subb
+
+=>
+(printout t "Enter first number" crlf)
+(bind ?n (read))
+(printout t "Enter sec number" crlf)
+(bind ?a (read))
+
+(printout t  "subb = " (- ?n ?a) crlf)
+) 
+(defrule add
+
+=>
+(printout t "Enter first number" crlf)
+(bind ?n (read))
+(printout t "Enter sec number" crlf)
+(bind ?a (read))
+
+(printout t  "add = " (+ ?n ?a) crlf)
+) 
+(defrule div
+
+=>
+(printout t "Enter first number" crlf)
+(bind ?n (read))
+(printout t "Enter sec number" crlf)
+(bind ?a (read))
+
+(printout t  "div = " (/ ?n ?a) crlf)
+) 

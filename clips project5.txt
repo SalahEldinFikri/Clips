@@ -1,0 +1,29 @@
+(deftemplate student
+   (slot student-name)
+   (slot student-id)
+   (slot major)
+   (slot nationality))
+(deffacts students
+   (student (student-name X) (student-id 1) (major CS) (nationality UK))
+   (student (student-name Y) (student-id 2) (major CS) (nationality USA))
+   (student (student-name Z) (student-id 3) (major CIS) (nationality FR))
+   (student (student-name W) (student-id 4) (major SE) (nationality FR))
+   (student (student-name Q) (student-id 5) (major CIS) (nationality USE))
+   (student (student-name U) (student-id 6) (major CS) (nationality UK)))
+
+(defrule rule-1
+   (student (student-name ?sn) (student-id ?si) (major ?m) (nationality ?n))
+   =>
+   (printout t "rule-1: " ?sn " " ?si " " ?m " " ?n crlf))
+
+(defrule rule-2
+   ?f <- (student)
+   =>
+   (printout t "rule-2: " (fact-slot-value ?f student-name)  " " 
+                          (fact-slot-value ?f student-id) " " 
+                          (fact-slot-value ?f major) " " 
+                          (fact-slot-value ?f nationality) crlf))
+(defrule rule-3
+   =>
+   (do-for-all-facts ((?f student)) TRUE
+      (format t "rule-3: %s %d %s %s%n" ?f:student-name ?f:student-id ?f:major ?f:nationality)))

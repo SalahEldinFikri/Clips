@@ -1,0 +1,19 @@
+(deffacts group 
+(Section salah math)
+(Section ahmed math)
+(Section sama arabic)
+(Section salma math)
+(Section ali arabic)
+(Section mohamed arabic)
+(Section sameh math)
+(Section mai nn)
+(Section leqaa nn)
+)
+
+
+(defrule r1
+(Section ?L ?S)
+(test (eq ?S math))
+=>
+(printout t ?L " : "?S crlf)
+)
